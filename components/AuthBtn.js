@@ -1,6 +1,6 @@
 import { useSession, signIn, signOut } from 'next-auth/react'
 import Image from 'next/image'
-//import { Image } from '@chakra-ui/react'
+import { ImSpinner9 } from 'react-icons/im'
 
 const AuthBtn = () => {
   const { data: session, status } = useSession()
@@ -8,7 +8,7 @@ const AuthBtn = () => {
     return (
       <div>
         <div>
-          {/* <RefreshIcon /> */}
+          <ImSpinner9 />
         </div>
       </div>
     )
@@ -28,11 +28,24 @@ const AuthBtn = () => {
         width={30}
         height={30}
       />
-      <button onClick={() => signOut()}>
-        Logout
-      </button>
+      <button onClick={() => signOut()}>Logout</button>
     </div>
   )
 }
 
 export default AuthBtn
+
+  /* 
+    ///console.log('session data',status)
+      'authenticated' / 'unauthenticated'
+    ///console.log('session',session)
+  {
+    "user": {
+        "name": "Dre Crego",
+        "email": "drecrego@gmail.com",
+        "image": "https://lh3.googleusercontent.com/a/ALm5wu2QqOdUCaDDCN-SdnPT4aPCvOH8QZQ0nvAsZ5XW=s96-c",
+        "id": "6373de19f792a083e020c28f"
+    },
+    "expires": "2022-12-31T17:25:51.614Z"
+}
+  */
