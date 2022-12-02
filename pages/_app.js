@@ -1,7 +1,7 @@
 import { SessionProvider } from 'next-auth/react'
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 import '../styles/globals.css'
-import chakra_theme from './chakra_theme'
+import chakra_theme from '../styles/chakra_theme'
 import DefaultLayout from '../layouts/default'
 import { ContextProvider } from '../modules/Context'
 
